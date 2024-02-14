@@ -31,6 +31,9 @@ export class BuscarComponent {
   isAlreadyInFavorites(weather:any) {
     return this.favorites.isAlreadyInFavorites(weather);
   }
+  isAlreadyInPredeterminada(weather:any) {
+    return this.favorites.isAlreadyInPredeterminada(weather);
+  }
 
   addFavorites(weather:any) {
     this.favorites.addFavorites(weather);
