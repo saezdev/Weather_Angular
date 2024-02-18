@@ -25,4 +25,8 @@ export class InicioComponent {
   getFavorites() {
     return this.favorites.getFavorites();
   }
+
+  getPredeterminada() {
+    return this.favorites.getPredeterminada();
+  }
 }

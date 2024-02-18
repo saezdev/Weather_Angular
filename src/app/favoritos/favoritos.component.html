@@ -15,7 +15,7 @@
         <app-card [datos]="datos"></app-card>
       } -->
       @for (datos of getFavoritos() | filtrarPorPatron:patron; track datos.id) {
-        <app-card (eventoBorrarFav)="removeFav($event)" [datos]="datos"></app-card>
+        <app-card [datos]="datos"></app-card>
       }
   </div>
   

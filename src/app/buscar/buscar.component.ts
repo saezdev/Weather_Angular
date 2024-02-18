@@ -40,6 +40,10 @@ export class BuscarComponent {
     console.log("AÑADIDO");
   }
 
+  addPredeterminada(weather:any) {
+    this.favorites.addPredeterminada(weather);
+  }
+
   fetchData() {
     this.bd.fetchDataFiltrada(this.patron);
   }

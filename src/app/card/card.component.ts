@@ -25,9 +25,17 @@ export class CardComponent {
     this.favorites.addFavorites(weather);
   }
 
+  addPredeterminada(weather:any) {
+    this.favorites.addPredeterminada(weather);
+  }
+
   removeFavorites(weather:any) {
     this.favorites.removeFavorites(weather);
     // this.eventoBorrarFav.emit(this.datos)
+  }
+
+  removePredeterminada() {
+    this.favorites.removePredeterminada();
   }
 
   isAlreadyInFavorites(weather:any) {

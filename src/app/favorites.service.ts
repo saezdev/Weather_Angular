@@ -9,11 +9,17 @@ export class FavoritesService {
   predeterminada:any = [];
   constructor() { 
     this.favorites = JSON.parse(localStorage.getItem("weather") || '[]');
+    this.predeterminada = JSON.parse(localStorage.getItem("predeterminada") || '[]');
   }
 
   addFavorites(weather:any) {
     this.favorites.push(weather);
     this.saveFavoritesToLocalStorage()
+  }
+
+  addPredeterminada(weather:any) {
+    this.predeterminada = weather;
+    localStorage.setItem("predeterminada", JSON.stringify(this.predeterminada));
   }
 
   removeFavorites(weather:any) {
@@ -24,8 +30,16 @@ export class FavoritesService {
     this.saveFavoritesToLocalStorage();
   }
 
+  removePredeterminada() {
+    this.predeterminada = {};
+  }
+
   getFavorites() {
     return this.favorites;
+  }
+
+  getPredeterminada() {
+    return this.predeterminada;
   }
 
   isAlreadyInFavorites(weather:any) {
@@ -33,7 +47,11 @@ export class FavoritesService {
   }
 
   isAlreadyInPredeterminada(weather:any) {
-    return this.predeterminada.find((c:any) => c.id == weather.id);
+    // return this.predeterminada.find((c:any) => c.id == weather.id);
+    if(this.predeterminada == weather)
+      return true;
+
+    return false;
   }
 
   saveFavoritesToLocalStorage() {
